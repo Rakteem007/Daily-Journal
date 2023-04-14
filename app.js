@@ -7,11 +7,7 @@ const _ =require('lodash');
 const mongoose= require('mongoose');
 
 //mongoDB connect
- mongoose.connect(process.env.URL,()=>{
-    app.listen(3000, function() {
-  console.log("Server started on port 3000");
-});
- });
+ mongoose.connect(process.env.URL);
 
 // mongosh connect
 // mongoose.connect("mongodb://localhost:27017/journalDB");
@@ -94,6 +90,10 @@ app.post('/compose',function(req,res){
       res.redirect('/');
    });
    
+});
+
+    app.listen(3000, function() {
+  console.log("Server started on port 3000");
 });
   
 
